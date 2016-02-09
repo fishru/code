@@ -14,6 +14,6 @@ public class BlockBreakMessage {
 		    .addChatMessage(
 		       new ChatComponentText(
 		    	   EnumChatFormatting.GOLD + 
-		       "雿�鈭��憛�!"));
+		       "你敲破了一個方塊喔"));
 	}
 }
