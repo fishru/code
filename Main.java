@@ -1,4 +1,4 @@
-package ru.minecraft.mods;
+package net.minecraft.minecraft_mods;
 
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;

@@ -1,4 +1,4 @@
-package ru.minecraft.mods;
+package net.minecraft.minecraft_mods;
 
 import net.minecraft.entity.item.EntityMinecart;
 import net.minecraftforge.event.entity.minecart.MinecartCollisionEvent;
