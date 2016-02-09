@@ -1,4 +1,4 @@
-package ru.minecraft.mods;
+package net.minecraft.minecraft_mods;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.DamageSource;

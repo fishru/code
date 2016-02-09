@@ -1,4 +1,4 @@
-package ru.minecraft.mods;
+package net.minecraft.minecraft_mods;
 
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.EnumChatFormatting;
@@ -14,6 +14,6 @@ public class BlockBreakMessage {
 		    .addChatMessage(
 		       new ChatComponentText(
 		    	   EnumChatFormatting.GOLD + 
-		       "你敲破了一個方塊!"));
+		       "你敲破了一個方塊喔"));
 	}
 }
