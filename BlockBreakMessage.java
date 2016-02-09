@@ -1,4 +1,4 @@
-package net.minecraft.minecraft_mods;
+﻿package net.minecraft.minecraft_mods;
 
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.EnumChatFormatting;
