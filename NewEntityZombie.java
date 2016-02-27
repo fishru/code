@@ -7,6 +7,8 @@ public class NewEntityZombie extends EntityZombie {
 
 	public NewEntityZombie(World worldIn) {
 		super(worldIn);
+		// TODO Auto-generated constructor stub
 	}
+
 
 }

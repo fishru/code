@@ -2,6 +2,7 @@ package net.minecraft.minecraft_mods;
 
 import java.util.Random;
 
+import net.minecraft.command.CommandException;
 import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -13,7 +14,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 public class ZombieKnights {
 	
 	@SubscribeEvent
-	public void giveArmor(EntityJoinWorldEvent event){
+	public void giveArmor(EntityJoinWorldEvent event) throws CommandException{
 		if(!(event.entity instanceof EntityZombie)){
 			return;
 		}
@@ -44,6 +45,10 @@ public class ZombieKnights {
 		zombie.setCurrentItemOrArmor(3, new ItemStack(Items.diamond_boots));
 		zombie.setCurrentItemOrArmor(4, new ItemStack(Items.diamond_helmet));
 		zombie.setCustomNameTag("Zombie Knight");
+		
+		//zombie.setPosition(zombie.posX + 2, zombie.posY, zombie.posZ);
+		//zombie.setLocationAndAngles(zombie.posX + 2, zombie.posY, zombie.posZ, zombie.rotationYaw, zombie.rotationPitch);
+		
 	}
 	
 	
