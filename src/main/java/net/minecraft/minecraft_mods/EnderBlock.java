@@ -9,7 +9,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
-import net.minecraft.util.BlockPos;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class EnderBlock extends Block{
@@ -68,10 +68,10 @@ public class EnderBlock extends Block{
 		EntityLightningBolt lightning = new EntityLightningBolt(world, pos.getX(), pos.getY(), pos.getZ());
 		world.addWeatherEffect(lightning);
 		*/
-		world.addWeatherEffect(new EntityLightningBolt(world, pos.getX()+2, pos.getY(), pos.getZ()+2));
-		world.addWeatherEffect(new EntityLightningBolt(world, pos.getX()+2, pos.getY(), pos.getZ()-2));
-		world.addWeatherEffect(new EntityLightningBolt(world, pos.getX()-2, pos.getY(), pos.getZ()-2));
-		world.addWeatherEffect(new EntityLightningBolt(world, pos.getX()-2, pos.getY(), pos.getZ()+2));
+		world.addWeatherEffect(new EntityLightningBolt(world, pos.getX()+2, pos.getY(), pos.getZ()+2, true));
+		world.addWeatherEffect(new EntityLightningBolt(world, pos.getX()+2, pos.getY(), pos.getZ()-2, true));
+		world.addWeatherEffect(new EntityLightningBolt(world, pos.getX()-2, pos.getY(), pos.getZ()-2, true));
+		world.addWeatherEffect(new EntityLightningBolt(world, pos.getX()-2, pos.getY(), pos.getZ()+2, true));
 
 	}
 	

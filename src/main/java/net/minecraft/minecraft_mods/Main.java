@@ -2,16 +2,17 @@ package net.minecraft.minecraft_mods;
 
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.resources.model.ModelResourceLocation;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.entity.EntityList;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 @Mod(modid = Main.MODID, version = Main.VERSION, name = Main.NAME)
@@ -76,7 +77,12 @@ public class Main {
 		//MinecraftForge.EVENT_BUS.register(new ExplodingMinecarts());
 		//MinecraftForge.EVENT_BUS.register(new ExplodingAnvils());
 		//MinecraftForge.EVENT_BUS.register(new PigsDroppingDiamonds());
-		MinecraftForge.EVENT_BUS.register(new ZombieKnights());
+		//MinecraftForge.EVENT_BUS.register(new ZombieKnights());
+		EntityRegistry.registerModEntity(NewEntityArrow.class, "TestArrow", 1, this, 80, 3, true, 6750105, 7859797);
+		//int entityid = EntityList.getIDFromString("TestArrow");
+		//EntityList.addMapping(NewEntityArrow.class, "TestArrow", entityid);
+		//EntityRegistry.registerEgg(EntityTippedArrow.class, 6750105, 7859797);
+		//EntityRegistry.registerModEntity(NewEntityChicken.class, "TestChicken", 1, this, 80, 3, true, 6750105, 7859797);
 		
 
 	}

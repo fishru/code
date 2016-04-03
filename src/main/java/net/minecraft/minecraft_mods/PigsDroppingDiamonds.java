@@ -14,14 +14,14 @@ public class PigsDroppingDiamonds {
 	
 	@SubscribeEvent
 	public void dropDiamonds(LivingDeathEvent event){
-		if(!(event.entity instanceof EntityPig)) {
+		if(!(event.getEntity() instanceof EntityPig)) {
 			return;
 		}
 		
 		Random random = new Random();
-		if(!event.entity.worldObj.isRemote) {
-		    event.entity.dropItem(Items.golden_carrot ,random.nextInt(3));
-		    event.entity.dropItem(Item.getItemFromBlock(Blocks.cobblestone) ,random.nextInt(3));
+		if(!event.getEntity().worldObj.isRemote) {
+		    event.getEntity().dropItem(Items.golden_carrot ,random.nextInt(3));
+		    event.getEntity().dropItem(Item.getItemFromBlock(Blocks.cobblestone) ,random.nextInt(3));
 		}
 	}
 

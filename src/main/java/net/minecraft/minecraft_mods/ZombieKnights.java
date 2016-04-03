@@ -15,7 +15,7 @@ public class ZombieKnights {
 	
 	@SubscribeEvent
 	public void giveArmor(EntityJoinWorldEvent event) throws CommandException{
-		if(!(event.entity instanceof EntityZombie)){
+		if(!(event.getEntity() instanceof EntityZombie)){
 			return;
 		}
 		
@@ -37,14 +37,15 @@ public class ZombieKnights {
 		}
 		*/
 		
-		EntityZombie zombie=(EntityZombie) event.entity;
-		
+		EntityZombie zombie=(EntityZombie) event.getEntity();
+		/*
 		zombie.setCurrentItemOrArmor(0, new ItemStack(Items.diamond_axe));
 		zombie.setCurrentItemOrArmor(1, new ItemStack(Items.diamond_chestplate));
 		zombie.setCurrentItemOrArmor(2, new ItemStack(Items.diamond_leggings));
 		zombie.setCurrentItemOrArmor(3, new ItemStack(Items.diamond_boots));
 		zombie.setCurrentItemOrArmor(4, new ItemStack(Items.diamond_helmet));
 		zombie.setCustomNameTag("Zombie Knight");
+		*/
 		
 		//zombie.setPosition(zombie.posX + 2, zombie.posY, zombie.posZ);
 		//zombie.setLocationAndAngles(zombie.posX + 2, zombie.posY, zombie.posZ, zombie.rotationYaw, zombie.rotationPitch);
@@ -54,12 +55,12 @@ public class ZombieKnights {
 	
 	@SubscribeEvent
 	public void dropItems(LivingDeathEvent event){
-		if(!(event.entity instanceof EntityZombie)){
+		if(!(event.getEntity() instanceof EntityZombie)){
 			return ;
 		}
 		Random random = new Random();
-		if(!event.entity.worldObj.isRemote) {
-			event.entity.dropItem(Items.diamond_axe,1);
+		if(!event.getEntity().worldObj.isRemote) {
+			event.getEntity().dropItem(Items.diamond_axe,1);
 		}
 	}
 

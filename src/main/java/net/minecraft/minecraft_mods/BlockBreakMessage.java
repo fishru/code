@@ -1,9 +1,5 @@
 package net.minecraft.minecraft_mods;
 
-import java.io.UnsupportedEncodingException;
-
-import net.minecraft.util.ChatComponentText;
-import net.minecraft.util.EnumChatFormatting;
 import net.minecraftforge.event.world.BlockEvent.BreakEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
@@ -13,12 +9,12 @@ public class BlockBreakMessage {
 	public void sendMessage(BreakEvent event){
 		
 		
-		if (!event.world.isRemote){
-			//String message = new String("敲破方塊");
+		if (!event.getWorld().isRemote){
+			//String message = new String("嚙踐嚙踐僮嚙踐��蕭");
 			//try {
-				//byte[] utf_str = "敲破方塊".getBytes("UTF-8");
+				//byte[] utf_str = "嚙踐嚙踐僮嚙踐��蕭".getBytes("UTF-8");
 				//String str = new String(utf_str, "UTF-8");
-				event.getPlayer().addChatMessage(new ChatComponentText(EnumChatFormatting.GOLD + "敲破了方塊"));
+				//event.getPlayer().addChatMessage(new ChatComponentText(EnumChatFormatting.GOLD + "嚙踐嚙踐僮�����蕭"));
 			//} catch (UnsupportedEncodingException e) {
 				// TODO Auto-generated catch block
 				//e.printStackTrace();
@@ -28,7 +24,7 @@ public class BlockBreakMessage {
 			
 			
 		}
-		System.out.println("isRemote? >> "+event.world.isRemote);
+		System.out.println("isRemote? >> "+event.getWorld().isRemote);
 		
 	}
 }

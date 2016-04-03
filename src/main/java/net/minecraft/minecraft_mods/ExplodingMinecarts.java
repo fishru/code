@@ -8,7 +8,7 @@ public class ExplodingMinecarts {
 	
 	@SubscribeEvent
 	public void explode(MinecartCollisionEvent event){
-		EntityMinecart minecart = event.minecart;
+		EntityMinecart minecart = event.getMinecart();
 		minecart.worldObj.createExplosion(
 		   minecart,
 		   minecart.posX,
