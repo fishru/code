@@ -1,3 +1,4 @@
 tile.enderBlock.name=Enderium Block
 item.ingotEnder.name=Ender Ingot
+item.testArrow.name=Test Arrow
 entity.myMods.TestArrow.name=TestArrow
