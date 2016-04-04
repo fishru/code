@@ -3,11 +3,11 @@ package net.minecraft.minecraft_mods;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.entity.EntityList;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -22,6 +22,8 @@ public class Main {
 	public static final String NAME = "mymods";
 	public static Block enderBlock;
 	public static Item enderIngot;
+	public static Item testArrow;
+	public static ResourceLocation testArrowTexture = new ResourceLocation("mymods:textures/items/testArrow.png");
 	
 	@EventHandler
 	public void init(FMLPreInitializationEvent event)
@@ -40,9 +42,13 @@ public class Main {
 		
 		enderBlock = new EnderBlock();
 		enderIngot = new EnderIngot();
+		testArrow = new ItemTestArrow();
 		
 		GameRegistry.registerBlock(enderBlock, "enderBlock");
 		GameRegistry.registerItem(enderIngot, "Ender Ingot");
+		//GameRegistry.register(testArrow);
+		GameRegistry.register(testArrow, testArrowTexture);
+		
 		
 		GameRegistry.addRecipe(
 				new ItemStack(Blocks.cobblestone),
