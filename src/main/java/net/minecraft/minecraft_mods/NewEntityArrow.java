@@ -15,8 +15,12 @@ public class NewEntityArrow extends EntityTippedArrow {
 	
 	public NewEntityArrow(World worldIn) {
 		super(worldIn);
-		//this.set
 	}
+	
+    public NewEntityArrow(World worldIn, double x, double y, double z)
+    {
+        super(worldIn, x, y, z);
+    }
 	
 	public NewEntityArrow(World worldIn, EntityLivingBase shooter){
 	        super(worldIn, shooter);
@@ -78,7 +82,7 @@ public class NewEntityArrow extends EntityTippedArrow {
         	*/
             ticks++;
             
-        	if (ticks == 100) {
+        	if (ticks == 1) {
         		this.setDead();
         	}
             

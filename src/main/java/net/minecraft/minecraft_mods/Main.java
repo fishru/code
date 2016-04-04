@@ -7,7 +7,6 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -23,7 +22,7 @@ public class Main {
 	public static Block enderBlock;
 	public static Item enderIngot;
 	public static Item testArrow;
-	public static ResourceLocation testArrowTexture = new ResourceLocation("mymods:textures/items/testArrow.png");
+	//public static ResourceLocation testArrowTexture = new ResourceLocation("mymods:textures/items/testArrow.png");
 	
 	@EventHandler
 	public void init(FMLPreInitializationEvent event)
@@ -42,12 +41,13 @@ public class Main {
 		
 		enderBlock = new EnderBlock();
 		enderIngot = new EnderIngot();
-		testArrow = new ItemTestArrow();
+		testArrow = new TestArrow();
 		
 		GameRegistry.registerBlock(enderBlock, "enderBlock");
 		GameRegistry.registerItem(enderIngot, "Ender Ingot");
 		//GameRegistry.register(testArrow);
-		GameRegistry.register(testArrow, testArrowTexture);
+		//GameRegistry.register(testArrow, testArrowTexture);
+		GameRegistry.registerItem(testArrow, "testArrow");
 		
 		
 		GameRegistry.addRecipe(
@@ -78,13 +78,17 @@ public class Main {
 		ModelResourceLocation enderBlockModel = new ModelResourceLocation("mymods:enderBlock", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(enderBlockItem, 0, enderBlockModel);
 		
+		Item testArrowItem = GameRegistry.findItem("mymods", "testArrow");
+		ModelResourceLocation testArrowModel = new ModelResourceLocation("mymods:testArrow", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(testArrowItem, 0, testArrowModel);
+		
 		
 		//MinecraftForge.EVENT_BUS.register(new BlockBreakMessage());
 		//MinecraftForge.EVENT_BUS.register(new ExplodingMinecarts());
 		//MinecraftForge.EVENT_BUS.register(new ExplodingAnvils());
 		//MinecraftForge.EVENT_BUS.register(new PigsDroppingDiamonds());
 		//MinecraftForge.EVENT_BUS.register(new ZombieKnights());
-		EntityRegistry.registerModEntity(NewEntityArrow.class, "TestArrow", 1, this, 80, 3, true, 6750105, 7859797);
+		EntityRegistry.registerModEntity(NewEntityArrow.class, "TestArrow", 1, this, 80, 3, true);
 		//int entityid = EntityList.getIDFromString("TestArrow");
 		//EntityList.addMapping(NewEntityArrow.class, "TestArrow", entityid);
 		//EntityRegistry.registerEgg(EntityTippedArrow.class, 6750105, 7859797);
