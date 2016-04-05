@@ -7,6 +7,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -22,7 +23,7 @@ public class Main {
 	public static Block enderBlock;
 	public static Item enderIngot;
 	public static Item testArrow;
-	//public static ResourceLocation testArrowTexture = new ResourceLocation("mymods:textures/items/testArrow.png");
+	public static ResourceLocation testArrowTexture = new ResourceLocation("mymods:textures/items/testArrow.png");
 	
 	@EventHandler
 	public void init(FMLPreInitializationEvent event)
@@ -41,13 +42,23 @@ public class Main {
 		
 		enderBlock = new EnderBlock();
 		enderIngot = new EnderIngot();
-		testArrow = new TestArrow();
+		testArrow = new TestArrow(); 
+		//testArrow = new Item();
+		
+		if (testArrow == null) {
+			System.out.println("<<<<<<<Object is null!!>>>>>>>>>>>>>>");
+		} else {
+			System.out.println("<<<<<<<Object is not null!!>>>>>>>>>>>>>>");
+		}
 		
 		GameRegistry.registerBlock(enderBlock, "enderBlock");
 		GameRegistry.registerItem(enderIngot, "Ender Ingot");
 		//GameRegistry.register(testArrow);
+		testArrow.setRegistryName(testArrowTexture);
+		testArrow = GameRegistry.register(testArrow);
 		//GameRegistry.register(testArrow, testArrowTexture);
-		GameRegistry.registerItem(testArrow, "testArrow");
+		//GameRegistry.registerItem(testArrow, "testArrow");
+		
 		
 		
 		GameRegistry.addRecipe(
@@ -77,6 +88,7 @@ public class Main {
 		Item enderBlockItem = GameRegistry.findItem("mymods", "enderBlock");
 		ModelResourceLocation enderBlockModel = new ModelResourceLocation("mymods:enderBlock", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(enderBlockItem, 0, enderBlockModel);
+		
 		
 		Item testArrowItem = GameRegistry.findItem("mymods", "testArrow");
 		ModelResourceLocation testArrowModel = new ModelResourceLocation("mymods:testArrow", "inventory");
